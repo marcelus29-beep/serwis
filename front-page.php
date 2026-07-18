@@ -18,6 +18,32 @@ get_header();
 	</div>
 </section>
 
+<section class="tdph-categories">
+    <div class="container">
+        <h2 class="tdph-categories__title">Kategorie</h2>
+        <div class="tdph-categories__grid">
+            <?php
+            $cats = get_terms([
+                'taxonomy'   => 'hp_listing_category',
+                'hide_empty' => false,
+            ]);
+
+            if ( ! is_wp_error( $cats ) ) :
+                foreach ( $cats as $cat ) :
+            ?>
+                <a class="tdph-category" href="<?php echo esc_url( get_term_link( $cat ) ); ?>">
+                    <span class="tdph-category__name"><?php echo esc_html( $cat->name ); ?></span>
+                    <span class="tdph-category__count"><?php echo intval( $cat->count ); ?> ogłoszeń</span>
+                </a>
+            <?php
+                endforeach;
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
+
+
 <section class="tdph-home-content">
 	<div class="container">
 
