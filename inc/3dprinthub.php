@@ -53,6 +53,15 @@ function tdph_enqueue_assets() {
 		filemtime( get_template_directory() . '/assets/css/listings.css' )
 	);
 
+
+
+	wp_enqueue_style(
+		'tdph-footer',
+		get_template_directory_uri() . '/assets/css/footer.css',
+		[ 'tdph-listings' ],
+		filemtime( get_template_directory() . '/assets/css/footer.css' )
+	);
+
 	wp_enqueue_style(
 		'tdph-single',
 		get_template_directory_uri() . '/assets/css/listing-single.css',
