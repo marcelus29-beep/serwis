@@ -1,0 +1,37 @@
+
+.tdph-listing{
+    max-width:1280px;
+    margin:40px auto;
+}
+
+.tdph-listing__grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:32px;
+}
+
+.tdph-listing__gallery img{
+    width:100%;
+    display:block;
+    border-radius:16px;
+}
+
+.tdph-listing__sidebar{
+    background:#fff;
+    border:1px solid var(--tdph-border,#e5e7eb);
+    border-radius:16px;
+    padding:24px;
+}
+
+.tdph-listing__price{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--tdph-primary,#2563eb);
+    margin-bottom:16px;
+}
+
+@media (max-width:768px){
+    .tdph-listing__grid{
+        grid-template-columns:1fr;
+    }
+}
