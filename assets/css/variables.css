@@ -1,65 +1,28 @@
 :root {
-
-	/* Brand */
-
 	--tdph-primary: #ff6b00;
 	--tdph-primary-hover: #e65f00;
-
 	--tdph-secondary: #111827;
 
-	--tdph-success: #22c55e;
-
-	--tdph-danger: #ef4444;
-
-	/* Backgrounds */
-
 	--tdph-bg: #f5f7fa;
-
 	--tdph-surface: #ffffff;
-
 	--tdph-surface-alt: #f8fafc;
 
-	/* Text */
-
 	--tdph-text: #1f2937;
-
 	--tdph-text-light: #6b7280;
-
 	--tdph-border: #e5e7eb;
 
-	/* Radius */
-
 	--tdph-radius-xs: 6px;
-
 	--tdph-radius-sm: 10px;
-
 	--tdph-radius: 14px;
-
 	--tdph-radius-lg: 20px;
 
-	--tdph-radius-xl: 28px;
-
-	/* Shadows */
-
 	--tdph-shadow-sm: 0 2px 6px rgba(0,0,0,.05);
-
 	--tdph-shadow: 0 10px 30px rgba(15,23,42,.08);
 
-	--tdph-shadow-lg: 0 20px 50px rgba(15,23,42,.12);
-
-	/* Width */
-
 	--tdph-container: 1280px;
-
-	/* Header */
-
 	--tdph-header-height: 78px;
 
-	/* Animation */
-
 	--tdph-transition: all .25s ease;
-
-	/* Typography */
 
 	--tdph-font:
 		Inter,
@@ -68,5 +31,4 @@
 		Helvetica,
 		Arial,
 		sans-serif;
-
 }

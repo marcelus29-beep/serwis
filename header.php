@@ -61,6 +61,14 @@
 							<?php if ( has_filter( 'hivetheme/v1/areas/site_header' ) ) : ?>
 								<div class="header-navbar__actions">
 									<?php echo apply_filters( 'hivetheme/v1/areas/site_header', '' ); ?>
+					
+<?php if ( ! is_user_logged_in() ) : ?>
+<div class="tdph-actions">
+	<a class="tdph-btn tdph-btn--secondary" href="<?php echo esc_url( wp_registration_url() ); ?>">Zarejestruj się</a>
+	<a class="tdph-btn tdph-btn--primary" href="<?php echo esc_url( home_url( '/dodaj-ogloszenie/' ) ); ?>">Dodaj ogłoszenie</a>
+</div>
+<?php endif; ?>
+
 								</div>
 							<?php endif; ?>
 						</div>

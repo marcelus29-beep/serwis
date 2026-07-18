@@ -1,0 +1,36 @@
+<?php
+/**
+ * Front page for 3DPrintHub.
+ */
+
+get_header();
+?>
+
+<section class="tdph-hero">
+	<div class="container">
+		<h1>Portal wydruków 3D</h1>
+		<p>Kupuj, sprzedawaj i zlecaj wydruki 3D w jednym miejscu.</p>
+
+		<form class="tdph-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+			<input type="search" name="s" placeholder="Szukaj modeli, usług lub materiałów...">
+			<button type="submit">Szukaj</button>
+		</form>
+	</div>
+</section>
+
+<section class="tdph-home-content">
+	<div class="container">
+
+		<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+				the_content();
+			endwhile;
+		endif;
+		?>
+
+	</div>
+</section>
+
+<?php get_footer();
