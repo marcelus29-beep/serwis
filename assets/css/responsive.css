@@ -1,0 +1,25 @@
+
+
+@media (max-width: 768px){
+    .tdph-header .container{
+        display:flex;
+        flex-direction:column;
+        gap:16px;
+    }
+
+    .tdph-header__actions{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .tdph-footer__top{
+        flex-direction:column;
+    }
+
+    .tdph-home-listings .section-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
