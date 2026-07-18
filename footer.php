@@ -1,43 +1,26 @@
-				</div>
-			</div>
-		</div>
-		<?php if ( ! is_singular( [ 'post', 'page' ] ) || ! get_post_meta( get_the_ID(), 'ht_hide_footer', true ) ) : ?>
-			<footer class="site-footer">
-				<div class="container">
-					<?php if ( is_active_sidebar( 'site_footer' ) ) : ?>
-						<div class="footer-widgets">
-							<div class="row">
-								<?php dynamic_sidebar( 'site_footer' ); ?>
-							</div>
-						</div>
-					<?php endif; ?>
-					<div class="footer-navbar">
-						<?php if ( get_theme_mod( 'copyright_notice' ) ) : ?>
-							<div class="footer-navbar__start">
-								<div class="footer-navbar__copyright">
-									<?php echo wp_kses_post( get_theme_mod( 'copyright_notice' ) ); ?>
-								</div>
-							</div>
-						<?php endif; ?>
-						<div class="footer-navbar__end">
-							<nav class="footer-navbar__menu">
-								<?php
-								wp_nav_menu(
-									[
-										'theme_location' => 'footer',
-										'container'      => 'ul',
-									]
-								);
-								?>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<?php
-		endif;
-
-		wp_footer();
-		?>
-	</body>
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+?>
+<footer class="tdph-footer">
+  <div class="container">
+    <div class="tdph-footer__top">
+      <div>
+        <h3><?php bloginfo('name'); ?></h3>
+        <p>Marketplace wydruków 3D.</p>
+      </div>
+      <nav>
+        <?php wp_nav_menu([
+          'theme_location'=>'footer',
+          'container'=>false,
+          'fallback_cb'=>false,
+        ]); ?>
+      </nav>
+    </div>
+    <div class="tdph-footer__bottom">
+      <small>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></small>
+    </div>
+  </div>
+  <?php wp_footer(); ?>
+</footer>
+</body>
 </html>
