@@ -53,11 +53,6 @@
 	padding: 0;
 }
 
-.tdph-nav li {
-	margin: 0;
-	padding: 0;
-}
-
 .tdph-nav a {
 	text-decoration: none;
 	font-size: 15px;
@@ -132,49 +127,9 @@
 	transform: translateY(-2px);
 }
 
-.tdph-mobile-toggle {
-	display: none;
-	background: none;
-	border: 0;
-	cursor: pointer;
-	padding: 0;
-}
-
-.tdph-mobile-toggle svg {
-	width: 28px;
-	height: 28px;
-}
-
 @media (max-width: 992px) {
-
-	.tdph-header__container {
-		padding: 0 18px;
-	}
-
-	.tdph-nav {
-		display: none;
-	}
-
+	.tdph-nav,
 	.tdph-actions {
 		display: none;
 	}
-
-	.tdph-mobile-toggle {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-}
-
-@media (max-width: 576px) {
-
-	.tdph-logo {
-		font-size: 20px;
-	}
-
-	.tdph-logo img {
-		height: 38px;
-	}
-
 }
