@@ -1,80 +1,23 @@
-<!DOCTYPE html>
+<?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+?><!doctype html>
 <html <?php language_attributes(); ?>>
-	<head>
-		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<?php wp_head(); ?>
-	</head>
-	<body <?php body_class(); ?>>
-		<?php
-		if ( function_exists( 'wp_body_open' ) ) :
-			wp_body_open();
-		endif;
-		?>
-		<div class="site-container">
-			<?php if ( ! is_singular( [ 'post', 'page' ] ) || ! get_post_meta( get_the_ID(), 'ht_hide_header', true ) ) : ?>
-				<header class="site-header">
-					<div class="header-navbar">
-						<div class="header-navbar__start">
-							<div class="header-logo">
-								<?php
-								if ( has_custom_logo() ) :
-									the_custom_logo();
-								else :
-									?>
-									<a href="<?php echo esc_url( home_url() ); ?>" rel="home">
-										<div class="header-logo__name"><?php bloginfo( 'name' ); ?></div>
-										<?php if ( get_bloginfo( 'description' ) ) : ?>
-											<div class="header-logo__description"><?php bloginfo( 'description' ); ?></div>
-										<?php endif; ?>
-									</a>
-								<?php endif; ?>
-							</div>
-						</div>
-						<div class="header-navbar__end">
-							<div class="header-navbar__burger" data-component="burger">
-								<a href="#">
-									<i class="fas fa-bars"></i>
-									<?php if ( function_exists( 'hivepress' ) && hivepress()->request->get_context( 'notice_count' ) ) : ?>
-										<small><?php echo esc_html( hivepress()->request->get_context( 'notice_count' ) ); ?></small>
-									<?php endif; ?>
-								</a>
-								<?php
-								wp_nav_menu(
-									[
-										'theme_location' => 'header',
-										'container'      => 'ul',
-									]
-								);
-								?>
-							</div>
-							<nav class="header-navbar__menu" data-component="menu">
-								<?php
-								wp_nav_menu(
-									[
-										'theme_location' => 'header',
-										'container'      => 'ul',
-									]
-								);
-								?>
-							</nav>
-							<?php if ( has_filter( 'hivetheme/v1/areas/site_header' ) ) : ?>
-								<div class="header-navbar__actions">
-									<?php echo apply_filters( 'hivetheme/v1/areas/site_header', '' ); ?>
-					
-<?php if ( ! is_user_logged_in() ) : ?>
-<div class="tdph-actions">
-	<a class="tdph-btn tdph-btn--secondary" href="<?php echo esc_url( wp_registration_url() ); ?>">Zarejestruj się</a>
-	<a class="tdph-btn tdph-btn--primary" href="<?php echo esc_url( home_url( '/dodaj-ogloszenie/' ) ); ?>">Dodaj ogłoszenie</a>
-</div>
+<head>
+<meta charset="<?php bloginfo('charset'); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<header class="tdph-header">
+<div class="container">
+<div class="tdph-header__logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php has_custom_logo()?the_custom_logo():bloginfo('name'); ?></a></div>
+<nav class="tdph-header__nav"><?php wp_nav_menu(['theme_location'=>'primary','container'=>false]); ?></nav>
+<div class="tdph-header__actions">
+<a class="button button--primary" href="<?php echo esc_url(home_url('/dodaj-ogloszenie/')); ?>">Dodaj ogłoszenie</a>
+<?php if(is_user_logged_in()): ?>
+<a class="button" href="<?php echo esc_url(home_url('/konto/')); ?>">Moje konto</a>
+<?php else: ?>
+<a class="button" href="<?php echo esc_url(wp_login_url()); ?>">Zaloguj</a>
 <?php endif; ?>
-
-								</div>
-							<?php endif; ?>
-						</div>
-					</div>
-					<?php echo apply_filters( 'hivetheme/v1/areas/site_hero', '' ); ?>
-				</header>
-			<?php endif; ?>
-			<div class="site-content" id="content">
-				<div class="container">
+</div></div></header>
