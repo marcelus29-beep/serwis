@@ -1,26 +1,138 @@
-(function($) {
-	'use strict';
+/**
+ * ============================================================
+ * 3DPrintHub Frontend
+ * File: assets/js/frontend.js
+ * Version: 1.0
+ * ============================================================
+ */
 
-	$('body').imagesLoaded(function() {
+(function () {
 
-		// Parallax
-		hivetheme.getComponent('parallax').each(function() {
-			var container = $(this),
-				background = container.css('background-image'),
-				offset = container.offset().top,
-				speed = 0.25;
+    'use strict';
 
-			if ($('#wpadminbar').length) {
-				offset = offset - $('#wpadminbar').height();
-			}
+    /**
+     * DOM Ready
+     */
+    document.addEventListener('DOMContentLoaded', function () {
 
-			if ($(window).width() >= 1024 && background.indexOf('url') === 0) {
-				container.css('background-position-y', ($(window).scrollTop() - offset) * speed);
+        initSmoothScroll();
+        initListingCards();
+        initNotices();
 
-				$(window).on('scroll', function() {
-					container.css('background-position-y', ($(window).scrollTop() - offset) * speed);
-				});
-			}
-		});
-	});
-})(jQuery);
+    });
+
+    /**
+     * Smooth scroll
+     */
+    function initSmoothScroll() {
+
+        const anchors = document.querySelectorAll('a[href^="#"]');
+
+        anchors.forEach(function (anchor) {
+
+            anchor.addEventListener('click', function (e) {
+
+                const target = document.querySelector(
+                    this.getAttribute('href')
+                );
+
+                if (!target) {
+                    return;
+                }
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+            });
+
+        });
+
+    }
+
+    /**
+     * Hover effect
+     */
+    function initListingCards() {
+
+        const cards = document.querySelectorAll('.hp-listing');
+
+        cards.forEach(function (card) {
+
+            card.addEventListener('mouseenter', function () {
+
+                this.classList.add('is-hover');
+
+            });
+
+            card.addEventListener('mouseleave', function () {
+
+                this.classList.remove('is-hover');
+
+            });
+
+        });
+
+    }
+
+    /**
+     * Hide notices
+     */
+    function initNotices() {
+
+        setTimeout(function () {
+
+            document
+                .querySelectorAll('.tdph-notice')
+                .forEach(function (notice) {
+
+                    notice.classList.add('is-hidden');
+
+                });
+
+        }, 5000);
+
+    }
+
+    /**
+     * Scroll to top
+     */
+    window.tdphScrollTop = function () {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: 'smooth'
+
+        });
+
+    };
+
+    /**
+     * Simple debounce helper
+     */
+    window.tdphDebounce = function (callback, delay) {
+
+        let timer;
+
+        return function () {
+
+            const context = this;
+            const args = arguments;
+
+            clearTimeout(timer);
+
+            timer = setTimeout(function () {
+
+                callback.apply(context, args);
+
+            }, delay);
+
+        };
+
+    };
+
+})();
