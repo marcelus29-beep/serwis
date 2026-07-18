@@ -1,0 +1,30 @@
+
+.tdph-footer{
+    background:#111827;
+    color:#f3f4f6;
+    margin-top:64px;
+}
+.tdph-footer .container{
+    padding:48px 20px;
+}
+.tdph-footer__top{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+    padding-bottom:24px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+.tdph-footer a{
+    color:#d1d5db;
+    text-decoration:none;
+}
+.tdph-footer a:hover{
+    color:#fff;
+}
+.tdph-footer__bottom{
+    padding-top:20px;
+    text-align:center;
+    font-size:.9rem;
+    color:#9ca3af;
+}
