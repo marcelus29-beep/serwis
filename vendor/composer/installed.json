@@ -1,0 +1,39 @@
+{
+    "packages": [
+        {
+            "name": "hivepress/hivetheme",
+            "version": "1.1.2",
+            "version_normalized": "1.1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hivepress/hivetheme.git",
+                "reference": "ecb22d65464f92cd077e37c093a81a0fc25158fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hivepress/hivetheme/zipball/ecb22d65464f92cd077e37c093a81a0fc25158fc",
+                "reference": "ecb22d65464f92cd077e37c093a81a0fc25158fc",
+                "shasum": ""
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "phpcompatibility/phpcompatibility-wp": "^2.1.0",
+                "wp-coding-standards/wpcs": "~2.3.0"
+            },
+            "time": "2026-02-22T14:02:46+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "A framework for HivePress themes.",
+            "support": {
+                "source": "https://github.com/hivepress/hivetheme/tree/1.1.2"
+            },
+            "install-path": "../hivepress/hivetheme"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

@@ -1,0 +1,246 @@
+/* ======================================================
+   3DPrintHub - Formularz dodawania ogłoszenia
+   ====================================================== */
+
+.hp-page__content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ---------- Sekcje ---------- */
+
+.hp-form__section,
+.hp-form__fields,
+.hp-field {
+    margin-bottom: 22px;
+}
+
+/* ---------- Etykiety ---------- */
+
+.hp-field__label,
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #555;
+}
+
+/* ---------- Wszystkie pola ---------- */
+
+.hp-field input[type=text],
+.hp-field input[type=email],
+.hp-field input[type=password],
+.hp-field input[type=number],
+.hp-field input[type=url],
+.hp-field input[type=tel],
+.hp-field textarea,
+.hp-field select {
+
+    width: 100%;
+    min-height: 54px;
+
+    border: 1px solid #dcdfe5;
+    border-radius: 12px;
+
+    background: #fff;
+
+    padding: 14px 18px;
+
+    font-size: 15px;
+
+    transition: .25s;
+
+    box-shadow: none;
+}
+
+/* textarea */
+
+.hp-field textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+/* focus */
+
+.hp-field input:focus,
+.hp-field textarea:focus,
+.hp-field select:focus{
+
+    border-color:#ef4444;
+
+    box-shadow:
+        0 0 0 4px rgba(239,68,68,.12);
+
+    outline:none;
+}
+
+/* ---------- SELECT ---------- */
+
+.hp-field select{
+
+    appearance:none;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%23999' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 18px center;
+
+    background-size:16px;
+}
+
+/* ---------- Pole ceny ---------- */
+
+input[type=number]{
+
+    -moz-appearance:textfield;
+
+    appearance:textfield;
+}
+
+/* Chrome */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+}
+
+/* ---------- Radio ---------- */
+
+.hp-field input[type=radio]{
+
+    width:18px;
+    height:18px;
+
+    margin-right:10px;
+
+    accent-color:#ef4444;
+}
+
+.hp-field--radio label{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    text-transform:none;
+
+    font-size:15px;
+
+    font-weight:500;
+}
+
+/* ---------- Checkbox ---------- */
+
+.hp-field input[type=checkbox]{
+
+    width:18px;
+    height:18px;
+
+    accent-color:#ef4444;
+}
+
+/* ---------- Upload zdjęć ---------- */
+
+.hp-file-upload,
+.hp-attachment{
+
+    border:2px dashed #d6dbe3;
+
+    border-radius:16px;
+
+    background:#fafafa;
+
+    padding:35px;
+
+    transition:.3s;
+}
+
+.hp-file-upload:hover{
+
+    border-color:#ef4444;
+
+    background:#fff;
+}
+
+/* ---------- Przyciski ---------- */
+
+.hp-button,
+button,
+input[type=submit]{
+
+    height:54px;
+
+    padding:0 30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ef4444;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.hp-button:hover,
+button:hover,
+input[type=submit]:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(239,68,68,.25);
+}
+
+/* ---------- Błędy ---------- */
+
+.hp-field--error input,
+.hp-field--error textarea,
+.hp-field--error select{
+
+    border-color:#ef4444;
+}
+
+.hp-message--error{
+
+    border-radius:12px;
+}
+
+/* ---------- Responsywność ---------- */
+
+@media (max-width:768px){
+
+.hp-page__content{
+
+    padding:0 20px;
+}
+
+.hp-field input,
+.hp-field textarea,
+.hp-field select{
+
+    min-height:50px;
+}
+
+.hp-button{
+
+    width:100%;
+}
+}

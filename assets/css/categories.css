@@ -1,0 +1,173 @@
+/* ==========================================================
+   3DPrintHub - Categories v1.0
+========================================================== */
+
+/* ---------------------------------
+   Sekcja
+--------------------------------- */
+
+.home .hp-listing-categories {
+    margin: 80px 0;
+}
+
+.home .hp-listing-categories .hp-section__title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.home .hp-listing-categories .hp-section__title::before {
+    display: none;
+}
+
+/* ---------------------------------
+   Siatka
+--------------------------------- */
+
+.home .hp-listing-categories .hp-row {
+    row-gap: 30px;
+}
+
+/* ---------------------------------
+   Kafelek
+--------------------------------- */
+
+.home .hp-listing-category--view-block {
+
+    background: #fff;
+
+    border: none;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.home .hp-listing-category--view-block:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+}
+
+/* ---------------------------------
+   Header
+--------------------------------- */
+
+.home .hp-listing-category__header {
+
+    background: #f8f8f8 !important;
+
+    height: 170px;
+
+    position: relative;
+}
+
+/* Usunięcie ciemnej nakładki */
+
+.home .hp-listing-category__image a::after {
+
+    background: transparent !important;
+}
+
+/* ---------------------------------
+   Badge
+--------------------------------- */
+
+.home .hp-listing-category__item-count {
+
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    z-index: 20;
+
+    background: #ef4444;
+
+    color: #fff;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+}
+
+/* ---------------------------------
+   Content
+--------------------------------- */
+
+.home .hp-listing-category__content {
+
+    position: relative;
+
+    z-index: 10;
+
+    padding: 22px;
+
+    text-align: center;
+}
+
+/* Nazwa */
+
+.home .hp-listing-category__name {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #222;
+
+    margin: 0;
+}
+
+.home .hp-listing-category__name a {
+
+    color: #222;
+
+    transition: color .25s ease;
+}
+
+.home .hp-listing-category__name a:hover {
+
+    color: #ef4444;
+}
+
+/* ---------------------------------
+   Responsive
+--------------------------------- */
+
+@media (max-width:1024px){
+
+    .home .hp-listing-categories .hp-section__title{
+
+        font-size:38px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .home .hp-listing-category__header{
+
+        height:140px;
+    }
+
+    .home .hp-listing-category__name{
+
+        font-size:20px;
+    }
+
+}

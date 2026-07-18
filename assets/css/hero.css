@@ -1,0 +1,125 @@
+/* ==========================================================
+   HERO - 3DPrintHub
+========================================================== */
+
+.hero-section{
+    max-width:1400px;
+    margin:0 auto;
+    padding:70px 40px;
+}
+
+.hero-section .kt-row-layout-inner{
+    align-items:center;
+}
+
+/* ----------------------------------------------------------
+   Lewa kolumna
+---------------------------------------------------------- */
+
+.hero-content{
+    padding-right:40px;
+}
+
+.hero-content h1{
+    font-size:clamp(42px,5vw,72px);
+    line-height:1.05;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.hero-description{
+    font-size:24px;
+    line-height:1.5;
+    color:#555;
+    margin-bottom:35px;
+}
+
+.hero-search{
+    margin-bottom:45px;
+}
+
+/* ----------------------------------------------------------
+   Prawa kolumna
+---------------------------------------------------------- */
+
+.hero-side{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    max-width:520px;
+    width:100%;
+    height:auto;
+}
+
+/* ----------------------------------------------------------
+   Zalety
+---------------------------------------------------------- */
+
+.hero-features{
+    margin-top:30px;
+}
+
+.hero-features li{
+    margin-bottom:18px;
+    font-size:18px;
+}
+
+/* ----------------------------------------------------------
+   Kafelki
+---------------------------------------------------------- */
+
+.hero-actions{
+    display:flex;
+    gap:30px;
+    margin-top:20px;
+}
+
+.hero-actions .wp-block-kadence-infobox{
+    flex:1;
+    transition:.3s;
+}
+
+.hero-actions .wp-block-kadence-infobox:hover{
+    transform:translateY(-8px);
+}
+
+/* ----------------------------------------------------------
+   Responsywność
+---------------------------------------------------------- */
+
+@media(max-width:1024px){
+
+    .hero-section{
+        padding:50px 25px;
+    }
+
+    .hero-content{
+        padding-right:0;
+    }
+
+    .hero-content h1{
+        text-align:center;
+    }
+
+    .hero-description{
+        text-align:center;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-side{
+        margin-top:40px;
+    }
+
+    .hero-image img{
+        max-width:380px;
+    }
+
+}
+}

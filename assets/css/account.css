@@ -1,0 +1,209 @@
+/* ==========================================================
+   3DPrintHub
+   account.css v1.0
+   User Account / Dashboard
+   ========================================================== */
+
+/* Container */
+
+.hp-page--account,
+.hp-page--user-account{
+    max-width:1400px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+/* Layout */
+
+.hp-page__content{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:32px;
+    align-items:start;
+}
+
+/* Sidebar */
+
+.hp-page__sidebar{
+    position:sticky;
+    top:30px;
+}
+
+.hp-page__sidebar .widget,
+.hp-account-nav{
+    background:#fff;
+    border:1px solid #eceff3;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 8px 30px rgba(0,0,0,.05);
+}
+
+.hp-account-nav ul,
+.hp-page__sidebar ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.hp-account-nav li,
+.hp-page__sidebar li{
+    margin-bottom:6px;
+}
+
+.hp-account-nav a,
+.hp-page__sidebar a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+    border-radius:12px;
+    color:#374151;
+    text-decoration:none;
+    font-weight:600;
+    transition:.25s;
+}
+
+.hp-account-nav a:hover,
+.hp-page__sidebar a:hover,
+.hp-account-nav .is-active>a,
+.hp-page__sidebar .current-menu-item>a{
+    background:#ef4444;
+    color:#fff;
+}
+
+/* Main */
+
+.hp-page__main{
+    min-width:0;
+}
+
+.hp-card,
+.hp-dashboard-card,
+.hp-widget{
+    background:#fff;
+    border:1px solid #eceff3;
+    border-radius:18px;
+    padding:24px;
+    margin-bottom:24px;
+    box-shadow:0 8px 30px rgba(0,0,0,.05);
+}
+
+.hp-card h2,
+.hp-dashboard-card h2{
+    margin:0 0 18px;
+    font-size:24px;
+    color:#111827;
+}
+
+/* Stats */
+
+.hp-dashboard-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.hp-dashboard-stat{
+    background:#fff;
+    border:1px solid #eceff3;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+}
+
+.hp-dashboard-stat strong{
+    display:block;
+    font-size:34px;
+    color:#ef4444;
+    margin-bottom:8px;
+}
+
+/* Tables */
+
+table.hp-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table.hp-table th,
+table.hp-table td{
+    padding:14px 16px;
+    border-bottom:1px solid #eef2f6;
+    text-align:left;
+}
+
+table.hp-table th{
+    background:#f8fafc;
+    font-weight:700;
+}
+
+/* Forms */
+
+.hp-form input,
+.hp-form select,
+.hp-form textarea{
+    width:100%;
+    box-sizing:border-box;
+    padding:12px 14px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    margin-bottom:16px;
+}
+
+.hp-form input:focus,
+.hp-form select:focus,
+.hp-form textarea:focus{
+    outline:none;
+    border-color:#ef4444;
+    box-shadow:0 0 0 4px rgba(239,68,68,.12);
+}
+
+/* Buttons */
+
+.hp-button,
+button,
+input[type=submit]{
+    border:none;
+    border-radius:12px;
+    padding:13px 22px;
+    background:#ef4444;
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.hp-button:hover,
+button:hover,
+input[type=submit]:hover{
+    transform:translateY(-2px);
+    filter:brightness(.96);
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+    .hp-page__content{
+        grid-template-columns:1fr;
+    }
+
+    .hp-page__sidebar{
+        position:static;
+    }
+}
+
+@media(max-width:767px){
+    .hp-page--account,
+    .hp-page--user-account{
+        padding:0 16px;
+    }
+
+    .hp-dashboard-stats{
+        grid-template-columns:1fr;
+    }
+
+    .hp-card,
+    .hp-dashboard-card{
+        padding:18px;
+    }
+}
