@@ -207,3 +207,29 @@ input[type=submit]:hover{
         padding:18px;
     }
 }
+
+
+.tdph-account{
+    max-width:1200px;
+    margin:48px auto;
+}
+.tdph-account__grid{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:32px;
+}
+.tdph-account__sidebar{
+    border:1px solid var(--tdph-border,#e5e7eb);
+    border-radius:16px;
+    padding:20px;
+    background:#fff;
+}
+.tdph-account__content{
+    border:1px solid var(--tdph-border,#e5e7eb);
+    border-radius:16px;
+    padding:24px;
+    background:#fff;
+}
+@media(max-width:768px){
+ .tdph-account__grid{grid-template-columns:1fr;}
+}
