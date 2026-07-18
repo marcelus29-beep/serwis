@@ -1,173 +1,75 @@
-/* ==========================================================
-   3DPrintHub - Categories v1.0
-========================================================== */
 
-/* ---------------------------------
-   Sekcja
---------------------------------- */
-
-.home .hp-listing-categories {
-    margin: 80px 0;
+.tdph-categories{
+	padding:70px 0;
+	background:var(--tdph-bg);
 }
 
-.home .hp-listing-categories .hp-section__title {
-    text-align: center;
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 50px;
+.tdph-categories .container{
+	max-width:1280px;
+	margin:0 auto;
+	padding:0 20px;
 }
 
-.home .hp-listing-categories .hp-section__title::before {
-    display: none;
+.tdph-categories__title{
+	font-size:32px;
+	font-weight:800;
+	margin:0 0 32px;
+	text-align:center;
+	color:var(--tdph-text);
 }
 
-/* ---------------------------------
-   Siatka
---------------------------------- */
-
-.home .hp-listing-categories .hp-row {
-    row-gap: 30px;
+.tdph-categories__grid{
+	display:grid;
+	grid-template-columns:repeat(6,minmax(0,1fr));
+	gap:20px;
 }
 
-/* ---------------------------------
-   Kafelek
---------------------------------- */
-
-.home .hp-listing-category--view-block {
-
-    background: #fff;
-
-    border: none;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.06);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+.tdph-category{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	text-decoration:none;
+	background:#fff;
+	border:1px solid var(--tdph-border);
+	border-radius:16px;
+	padding:24px 16px;
+	min-height:150px;
+	transition:var(--tdph-transition);
+	box-shadow:var(--tdph-shadow-sm);
 }
 
-.home .hp-listing-category--view-block:hover {
-
-    transform: translateY(-6px);
-
-    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+.tdph-category:hover{
+	transform:translateY(-4px);
+	box-shadow:var(--tdph-shadow);
+	border-color:var(--tdph-primary);
 }
 
-/* ---------------------------------
-   Header
---------------------------------- */
-
-.home .hp-listing-category__header {
-
-    background: #f8f8f8 !important;
-
-    height: 170px;
-
-    position: relative;
+.tdph-category__icon{
+	font-size:40px;
+	margin-bottom:14px;
 }
 
-/* Usunięcie ciemnej nakładki */
-
-.home .hp-listing-category__image a::after {
-
-    background: transparent !important;
+.tdph-category__name{
+	font-weight:700;
+	color:var(--tdph-text);
+	text-align:center;
+	margin-bottom:8px;
 }
 
-/* ---------------------------------
-   Badge
---------------------------------- */
-
-.home .hp-listing-category__item-count {
-
-    position: absolute;
-
-    top: 18px;
-    left: 18px;
-
-    z-index: 20;
-
-    background: #ef4444;
-
-    color: #fff;
-
-    padding: 6px 14px;
-
-    border-radius: 999px;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    letter-spacing: .5px;
+.tdph-category__count{
+	font-size:14px;
+	color:var(--tdph-text-light);
 }
 
-/* ---------------------------------
-   Content
---------------------------------- */
-
-.home .hp-listing-category__content {
-
-    position: relative;
-
-    z-index: 10;
-
-    padding: 22px;
-
-    text-align: center;
+@media (max-width:992px){
+	.tdph-categories__grid{
+		grid-template-columns:repeat(3,1fr);
+	}
 }
 
-/* Nazwa */
-
-.home .hp-listing-category__name {
-
-    font-size: 22px;
-
-    font-weight: 700;
-
-    color: #222;
-
-    margin: 0;
-}
-
-.home .hp-listing-category__name a {
-
-    color: #222;
-
-    transition: color .25s ease;
-}
-
-.home .hp-listing-category__name a:hover {
-
-    color: #ef4444;
-}
-
-/* ---------------------------------
-   Responsive
---------------------------------- */
-
-@media (max-width:1024px){
-
-    .home .hp-listing-categories .hp-section__title{
-
-        font-size:38px;
-    }
-
-}
-
-@media (max-width:768px){
-
-    .home .hp-listing-category__header{
-
-        height:140px;
-    }
-
-    .home .hp-listing-category__name{
-
-        font-size:20px;
-    }
-
+@media (max-width:576px){
+	.tdph-categories__grid{
+		grid-template-columns:repeat(2,1fr);
+	}
 }
