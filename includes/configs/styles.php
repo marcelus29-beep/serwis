@@ -1,99 +1,91 @@
 <?php
 /**
- * Styles configuration.
+ * Theme styles configuration.
  *
  * @package HiveTheme\Configs
  */
 
+// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 return [
+	[
+		'selector'   => '
+			.button,
+			button,
+			input[type=submit],
+			.woocommerce #respond input#submit,
+			.woocommerce a.button,
+			.woocommerce button.button,
+			.woocommerce input.button,
+			.wp-block-button__link,
+			.header-navbar__burger > ul > li > a,
+			.pagination > span,
+			.pagination .nav-links > a,
+			.pagination .nav-links > span,
+			.pagination > a,
+			.woocommerce nav.woocommerce-pagination ul li a,
+			.woocommerce nav.woocommerce-pagination ul li span
+		',
 
-    'parent_frontend' => [
-        'handle'  => 'hivetheme-parent-frontend',
-        'src'     => hivetheme()->get_url( 'parent' ) . '/style.css',
-        'version' => hivetheme()->get_version( 'parent' ),
-        'scope'   => [ 'frontend', 'editor' ],
-    ],
+		'properties' => [
+			[
+				'name'      => 'font-family',
+				'theme_mod' => 'heading_font',
+			],
 
-    'tdph-variables' => [
-        'handle'       => 'tdph-variables',
-        'src'          => get_template_directory_uri() . '/assets/css/variables.css',
-        'dependencies' => [ 'hivetheme-parent-frontend' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
+			[
+				'name'      => 'font-weight',
+				'theme_mod' => 'heading_font_weight',
+			],
+		],
+	],
 
-    'tdph-header' => [
-        'handle'       => 'tdph-header',
-        'src'          => get_template_directory_uri() . '/assets/css/header.css',
-        'dependencies' => [ 'tdph-variables' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
+	[
+		'selector'   => '
+			.title::before,
+			.footer-widgets .widget__title::before,
+			.hp-page__title::before,
+			.hp-section__title::before,
+			.hp-listing--view-block .hp-listing__featured-badge
+		',
 
-    'tdph-hero' => [
-        'handle'       => 'tdph-hero',
-        'src'          => get_template_directory_uri() . '/assets/css/hero.css',
-        'dependencies' => [ 'tdph-header' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
+		'properties' => [
+			[
+				'name'      => 'background-color',
+				'theme_mod' => 'primary_color',
+			],
+		],
+	],
 
-    'tdph-categories' => [
-        'handle'       => 'tdph-categories',
-        'src'          => get_template_directory_uri() . '/assets/css/categories.css',
-        'dependencies' => [ 'tdph-hero' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
+	[
+		'selector'   => '
+			.tagcloud a:hover,
+			.wp-block-tag-cloud a:hover,
+			.hp-listing__images-carousel .slick-current img,
+			.hp-listing--view-block.hp-listing--featured
+		',
 
-    'tdph-listings' => [
-        'handle'       => 'tdph-listings',
-        'src'          => get_template_directory_uri() . '/assets/css/listings.css',
-        'dependencies' => [ 'tdph-categories' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
+		'properties' => [
+			[
+				'name'      => 'border-color',
+				'theme_mod' => 'primary_color',
+			],
+		],
+	],
 
-    'tdph-single' => [
-        'handle'       => 'tdph-single',
-        'src'          => get_template_directory_uri() . '/assets/css/listing-single.css',
-        'dependencies' => [ 'tdph-listings' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
+	[
+		'selector'   => '
+			.post__categories a:hover,
+			.hp-listing--view-block .hp-listing__categories a:hover,
+			.hp-listing--view-page .hp-listing__categories a:hover
+		',
 
-    'tdph-forms' => [
-        'handle'       => 'tdph-forms',
-        'src'          => get_template_directory_uri() . '/assets/css/forms.css',
-        'dependencies' => [ 'tdph-single' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
-
-    'tdph-account' => [
-        'handle'       => 'tdph-account',
-        'src'          => get_template_directory_uri() . '/assets/css/account.css',
-        'dependencies' => [ 'tdph-forms' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
-
-    'tdph-footer' => [
-        'handle'       => 'tdph-footer',
-        'src'          => get_template_directory_uri() . '/assets/css/footer.css',
-        'dependencies' => [ 'tdph-account' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
-
-    'tdph-responsive' => [
-        'handle'       => 'tdph-responsive',
-        'src'          => get_template_directory_uri() . '/assets/css/responsive.css',
-        'dependencies' => [ 'tdph-footer' ],
-        'version'      => '1.0.0',
-        'scope'        => [ 'frontend' ],
-    ],
-
+		'properties' => [
+			[
+				'name'      => 'background-color',
+				'theme_mod' => 'secondary_color',
+			],
+		],
+	],
 ];
