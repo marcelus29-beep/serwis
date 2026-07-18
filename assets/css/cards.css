@@ -1,16 +1,32 @@
-/* 3DPrintHub UI v5 - Etap 1 */
-/* Place your full cards.css here or replace this file with the latest version. */
+/* 3DPrintHub Listing Cards v4 */
 
-.tdph-card-title{
-display:block;
-margin:8px 0 10px;
-color:#1f2937;
-font-size:18px;
-font-weight:700;
-line-height:1.35;
-text-decoration:none;
-transition:color .2s ease;
-}
-.tdph-card-title:hover{color:#2563eb;}
-.tdph-card-date{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;color:#6b7280;}
-.tdph-card-date__icon{width:14px;height:14px;flex-shrink:0;color:#9ca3af;}
+
+.hp-listings,.hp-listing-archive,.hp-page__listings{gap:24px;}
+.hp-listing.hp-listing--view-block{display:flex;flex-direction:column;height:100%;overflow:hidden;background:#fff;border:1px solid #eceff3;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,.05);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.hp-listing.hp-listing--view-block:hover{transform:translateY(-8px);border-color:#e2e8f0;box-shadow:0 26px 60px rgba(0,0,0,.14)}
+.hp-listing__header{padding:0!important;margin:0!important;border:0}
+.hp-listing__image{position:relative;overflow:hidden;height:320px;background:#f8f8f8;display:flex;align-items:center;justify-content:center}
+.hp-listing__image img{width:100%;height:100%;object-fit:contain;transition:transform .45s ease,filter .35s ease}
+.hp-listing:hover .hp-listing__image img{transform:scale(1.04);filter:brightness(1.03)}
+.hp-listing__image img[src*='placeholder']{object-fit:contain;padding:40px;opacity:.65}
+.hp-listing__content{display:flex;flex-direction:column;flex:1;padding:18px}
+.hp-listing__categories{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.hp-listing__categories a{display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;background:#f3f4f6;color:#64748b;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-radius:999px;text-decoration:none}
+.hp-listing__categories a:hover{background:#ef4444;color:#fff}
+.hp-listing__title{margin:0 0 14px!important;font-size:24px;font-weight:700;line-height:1.35;min-height:0}
+.hp-listing__title a{color:#1f2937!important;text-decoration:none}
+.hp-listing__title a:hover{color:#ef4444!important}
+.hp-listing__details{display:flex;flex-direction:column;gap:8px;margin-top:auto;color:#6b7280;font-size:13px}
+.hp-listing__details>div,.hp-listing__details>span{display:flex;align-items:center;gap:8px}
+.hp-listing__footer{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:18px;border-top:1px solid #eef2f6;background:#fff}
+.hp-listing__attributes,.hp-listing__attributes--primary{display:flex;flex-direction:column;gap:10px}
+.hp-listing__attribute{margin:0;padding:0;background:transparent!important;border:0!important;box-shadow:none!important}
+.hp-listing__attribute--material{display:inline-flex;align-items:center;justify-content:center;padding:7px 14px!important;background:#eef2ff!important;color:#4338ca;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.hp-listing__attribute--cena{display:block;padding:0!important;color:#ef4444;font-size:34px;font-weight:800;line-height:1}
+.hp-listing__attribute--cena small,.hp-listing__attribute--cena span{font-size:.65em;font-weight:700}
+.hp-listing__actions{display:flex;align-items:center;gap:14px}
+.hp-listing__actions a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#f8fafc;color:#64748b;border:1px solid #eceff3}
+.hp-listing__actions a:hover{background:#ef4444;color:#fff;border-color:#ef4444;transform:translateY(-2px)}
+.hp-listing__actions svg{width:18px;height:18px}
+@media(max-width:991px){.hp-listing__image{height:230px}.hp-listing__title{font-size:21px}.hp-listing__attribute--cena{font-size:30px}}
+@media(max-width:767px){.hp-listing__content{padding:16px}.hp-listing__footer{padding:16px;gap:12px}.hp-listing__image{height:210px}.hp-listing__title{font-size:19px}.hp-listing__attribute--cena{font-size:26px}}
